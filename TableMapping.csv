@@ -1,0 +1,30 @@
+// create Religion vertices
+g.addV('Religion').property('id', 1).property('name', 'Christianity')
+g.addV('Religion').property('id', 2).property('name', 'Islam')
+g.addV('Religion').property('id', 3).property('name', 'Buddhism')
+g.addV('Religion').property('id', 4).property('name', 'Hinduism')
+
+// create Principle vertices
+g.addV('Principle').property('id', 1).property('principle', 'Love').property('religion_id', 1)
+g.addV('Principle').property('id', 2).property('principle', 'Respect').property('religion_id', 1)
+g.addV('Principle').property('id', 3).property('principle', 'Compassion').property('religion_id', 3)
+g.addV('Principle').property('id', 4).property('principle', 'Non-violence').property('religion_id', 3)
+
+// create Moral Value vertices
+g.addV('MoralValue').property('id', 1).property('name', 'Honesty')
+g.addV('MoralValue').property('id', 2).property('name', 'Integrity')
+g.addV('MoralValue').property('id', 3).property('name', 'Kindness')
+
+// create AlterCall Rule vertices
+g.addV('AlterCallRule').property('id', 1).property('rule_type', 'Morality').property('description', 'Do unto others as you would have them do unto you.')
+g.addV('AlterCallRule').property('id', 2).property('rule_type', 'Religious').property('description', 'Love your neighbor as yourself.')
+g.addV('AlterCallRule').property('id', 3).property('rule_type', 'Social').property('description', 'Treat others with respect and dignity.')
+g.addV('AlterCallRule').property('id', 4).property('rule_type', 'Psychology').property('description', 'Focus on the present moment and practice mindfulness.')
+
+// create User vertices
+g.addV('User').property('id', 1).property('username', 'john_doe').property('email', 'john.doe@example.com').property('spirituality_score', 8).property('personality_score', 7).property('business_aptitude_score', 5)
+g.addV('User').property('id', 2).property('username', 'jane_doe').property('email', 'jane.doe@example.com').property('spirituality_score', 9).property('personality_score', 8).property('business_aptitude_score', 6)
+
+// create User Preference edges
+g.V().has('User', 'id', 1).as('user').V().has('Religion', 'id', 1).addE('hasPreference').to('user').property('preference_type', 'favorite religion').property('preference_value', 'Christianity')
+g.V().has('User', 'id', 1).as('user').V().has('MoralValue', 'id', 1).addE('hasPreference').to('user').property('preference_type', 'preferred moral value').property('preference_value')
