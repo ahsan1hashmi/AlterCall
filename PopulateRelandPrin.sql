@@ -67,11 +67,22 @@ INSERT INTO Principle (religion_id, principle) VALUES
     (5, 'The Middle Way'),
     (5, 'The Three Jewels'),
     (5, 'The Five Precepts'),
-    -- Populating Alter Call Rules 
+-- Populating Alter Call Rules 
 INSERT INTO AlterCallRule (rule_type, description) VALUES 
   ('morality', 'Love all who cross your path'),
   ('religious', 'Pray'),
   ('social', 'Conflict in external environment is related to conflict internal environment'),
   ('psychological', 'Overcome lower self to reach higher self'),
   ('morality', 'Hate is the only enemy');
-  
+-- Populating users(andom
+INSERT INTO User (username, password, email, spirituality_score, personality_score) VALUES 
+    ('user1', 'password1', 'user1@example.com', FLOOR(RANDOM()*100), FLOOR(RANDOM()*100)),
+    ('user2', 'password2', 'user2@example.com', FLOOR(RANDOM()*100), FLOOR(RANDOM()*100)),
+    ('user3', 'password3', 'user3@example.com', FLOOR(RANDOM()*100), FLOOR(RANDOM()*100)),
+    ('user4', 'password4', 'user4@example.com', FLOOR(RANDOM()*100), FLOOR(RANDOM()*100)),
+    ('user5', 'password5', 'user5@example.com', FLOOR(RANDOM()*100), FLOOR(RANDOM()*100)),
+    ('user6', 'password6', 'user6@example.com', FLOOR(RANDOM()*100), FLOOR(RANDOM()*100)),
+    ('user7', 'password7', 'user7@example.com', FLOOR(RANDOM()*100), FLOOR(RANDOM()*100)),
+    ('user8', 'password8', 'user8@example.com', FLOOR(RANDOM()*100), FLOOR(RANDOM()*100)),
+    ('user9', 'password9', 'user9@example.com', FLOOR(RANDOM()*100), FLOOR(RANDOM()*100)),
+    ('user10', 'password10', 'user10@example.com', FLOOR(RANDOM()*100), FLOOR(RANDOM()*100));
