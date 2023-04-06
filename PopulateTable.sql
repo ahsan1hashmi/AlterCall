@@ -77,7 +77,7 @@ INSERT INTO AlterCallRule (rule_type, description) VALUES
   ('social', 'Conflict in external environment is related to conflict internal environment'),
   ('psychological', 'Overcome lower self to reach higher self'),
   ('morality', 'Hate is the only enemy');
--- Populating users(andom
+-- Populating users
 INSERT INTO User (username, password, email, spirituality_score, personality_score) VALUES 
     ('user1', 'password1', 'user1@example.com', FLOOR(RANDOM()*100), FLOOR(RANDOM()*100)),
     ('user2', 'password2', 'user2@example.com', FLOOR(RANDOM()*100), FLOOR(RANDOM()*100)),
@@ -89,3 +89,47 @@ INSERT INTO User (username, password, email, spirituality_score, personality_sco
     ('user8', 'password8', 'user8@example.com', FLOOR(RANDOM()*100), FLOOR(RANDOM()*100)),
     ('user9', 'password9', 'user9@example.com', FLOOR(RANDOM()*100), FLOOR(RANDOM()*100)),
     ('user10', 'password10', 'user10@example.com', FLOOR(RANDOM()*100), FLOOR(RANDOM()*100));
+--Populate user preference
+INSERT INTO UserPreference (user_id, preference_type, preference_value)
+SELECT 
+  id,
+  'favorite_religion',
+  CASE 
+    WHEN random() < 0.2 THEN 'Christianity'
+    WHEN random() < 0.4 THEN 'Islam'
+    WHEN random() < 0.6 THEN 'Judaism'
+    WHEN random() < 0.8 THEN 'Hinduism'
+    ELSE 'Buddhism'
+  END
+FROM User;
+
+INSERT INTO UserPreference (user_id, preference_type, preference_value)
+SELECT 
+  id,
+  'preferred_moral_value',
+  CASE 
+    WHEN random() < 0.33 THEN 'Honesty'
+    WHEN random() < 0.66 THEN 'Compassion'
+    ELSE 'Respect'
+  END
+FROM User;
+
+INSERT INTO UserPreference (user_id, preference_type, preference_value)
+SELECT 
+  id,
+  'preferred_sexuality',
+  CASE 
+    WHEN random() < 0.5 THEN 'Heterosexual'
+    ELSE 'Homosexual'
+  END
+FROM User;
+
+INSERT INTO UserPreference (user_id, preference_type, preference_value)
+SELECT 
+  id,
+  'preferred_political_party',
+  CASE 
+    WHEN random() < 0.5 THEN 'Republican'
+    ELSE 'Democrat'
+  END
+FROM User;
