@@ -66,4 +66,12 @@ INSERT INTO Principle (religion_id, principle) VALUES
     (5, 'One with others'),
     (5, 'The Middle Way'),
     (5, 'The Three Jewels'),
-    (5, 'The Five Precepts');
+    (5, 'The Five Precepts'),
+    --Populating Alter Call Rules 
+INSERT INTO AlterCallRule (rule_type, description) VALUES 
+  ('morality', 'Love all who cross your path'),
+  ('religious', 'Pray'),
+  ('social', 'Conflict in external environment is related to conflict internal environment'),
+  ('psychological', 'Overcome lower self to reach higher self'),
+  ('morality', 'Hate is the only enemy');
+  
