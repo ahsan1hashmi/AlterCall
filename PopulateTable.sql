@@ -67,6 +67,9 @@ INSERT INTO Principle (religion_id, principle) VALUES
     (5, 'The Middle Way'),
     (5, 'The Three Jewels'),
     (5, 'The Five Precepts'),
+--Populating MoralValue 
+INSERT INTO MoralValue (name) VALUES 
+('Marriage'), ('Abortion'), ('Sexuality');
 -- Populating Alter Call Rules 
 INSERT INTO AlterCallRule (rule_type, description) VALUES 
   ('morality', 'Love all who cross your path'),
